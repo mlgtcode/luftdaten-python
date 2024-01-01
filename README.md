@@ -20,7 +20,7 @@ Copy the `config.default.toml` to `config.toml` and adjust the settings. It may 
 
 ## Running a systemd unit
 
-Take a look at the [dusty.unit](dusty.unit).
+Take a look at the [dusty.service](dusty.service).
 
 ## Privileges
 
