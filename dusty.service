@@ -1,0 +1,13 @@
+[Unit]
+Description=Luftdaten
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+User=dusty
+ExecStart=/usr/bin/python3 /home/dusty/luftdaten-python/main.py --config /home/dusty/luftdaten-python/config.toml
+
+[Install]
+WantedBy=multi-user.target

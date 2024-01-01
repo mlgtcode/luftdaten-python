@@ -1,7 +1,7 @@
 [luftdaten]
 enabled = true
 # Override the serial derived from the CPU
-sensor  = "012345"
+# sensor  = "1234"
 
 [influxdb]
 enabled  = false
@@ -16,3 +16,6 @@ broker    = "localhost"
 port      = 1883
 topic     = "/python/mqtt"
 client_id = "dusty"
+
+[opensense]
+enabled   = true
