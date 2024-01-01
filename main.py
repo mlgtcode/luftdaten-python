@@ -180,16 +180,18 @@ class Measurement:
             "BME280_humidity":    self.humidity,
             "DHT22_temperature":  self.dhttemperature,
             "DHT22_humidity":     self.dhthumidity,
-            "signal":             self.signal,
+            "wifi-signal":        self.signal,
         })
+        
         self.__pushLuftdaten('https://api.luftdaten.info/v1/push-sensor-data/', 1, {
             "P1": self.pm10_value,
             "P2": self.pm25_value,
         })
+        
         self.__pushLuftdaten('https://api.luftdaten.info/v1/push-sensor-data/', 11, {
             "temperature": self.temperature,
-            "pressure":    self.pressure,
             "humidity":    self.humidity,
+            "pressure":    round(self.pressure/100, 2),
         })
 
         self.__pushLuftdaten('https://api.luftdaten.info/v1/push-sensor-data/', 7, {
