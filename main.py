@@ -113,7 +113,8 @@ class Measurement:
         pressure_ID = "000000000000000000000" # your senseBox pressure sensor ID
         temperature2_ID = "000000000000000000000" # your senseBox temperature sensor ID
         humidity2_ID = "000000000000000000000" # your senseBox humidity sensor ID
-        ts = datetime.datetime.utcnow().isoformat("T")+"Z" # RFC 3339 Timestamp # optional # requires import datetime
+        wifi_ID = "000000000000000000000" # wifi signal
+        ts = datetime.datetime.utcnow().isoformat("T")+"Z" # RFC 3339 Timestamp 
 
         try:
             requests.post("https://api.opensensemap.org/boxes/"+senseBox_ID+"/data",
@@ -132,6 +133,8 @@ class Measurement:
                     temperature2_ID: [round(self.dhttemperature, 2), ts],
                     # DHIT Hum
                     humidity2_ID: [round(self.dhthumidity, 2), ts],
+                    # WiFi signal
+                    wifi_ID: [self.signal, ts],
                 },
                 headers={
                     "content-type": "application/json",
@@ -253,6 +256,6 @@ if __name__ == "__main__":
         print("running ...")
         run()
         print("sleeping ...")
-        time.sleep(15)  # sleep a few seconds longer
+        # time.sleep(120)
         time.sleep(60.0 - ((time.time() - starttime) % 60.0))
     print("Stopped")
