@@ -128,7 +128,7 @@ class Measurement:
                     # BME Hum
                     humidity_ID: [round(self.humidity, 2), ts],
                     # BME Press
-                    pressure_ID: [round(self.pressure/100, 2), ts], # Pressure in hPA, remove "\100" if you want the value in Pa
+                    pressure_ID: [round(self.pressure, 2), ts], # Pressure in hPA, remove "\100" if you want the value in Pa
                     # DHT Temp
                     temperature2_ID: [round(self.dhttemperature, 2), ts],
                     # DHIT Hum
@@ -191,7 +191,7 @@ class Measurement:
         self.__pushLuftdaten('https://api.luftdaten.info/v1/push-sensor-data/', 11, {
             "temperature": self.temperature,
             "humidity":    self.humidity,
-            "pressure":    round(self.pressure/100, 2),
+            "pressure":    self.pressure,
         })
 
         self.__pushLuftdaten('https://api.luftdaten.info/v1/push-sensor-data/', 7, {
