@@ -11,7 +11,7 @@ It has been written to run on a Raspberry Pi and to to send collected measuremen
 ## Supported Hardware
 
 * [Nova Fitness SDS011](http://aqicn.org/sensor/sds011/) or compatible connected via `ttyUSB` for dust
-* [Bosch BME 2280](https://www.bosch-sensortec.com/bst/products/all_products/bme280) connected via I²C for temperature, humidity and pressure
+* [Bosch BME 280](https://www.bosch-sensortec.com/bst/products/all_products/bme280) connected via I²C for temperature, humidity and pressure
 * [DHT22](https://learn.adafruit.com/dht/overview) for temperature and humidity
 
 ## Configuration
